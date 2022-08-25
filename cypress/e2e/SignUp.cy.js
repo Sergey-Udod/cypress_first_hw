@@ -13,7 +13,16 @@ describe('Visit "Sign up" page', () => {
     cy.get('[placeholder="Username"]')
       .type(user.username)
 
+    cy.get('[placeholder="Email"]')
+      .type(user.email)
+
+    cy.get('[placeholder="Password"]')
+      .type(user.password)
+
+    cy.get('.btn')
+      .click()
+
+    cy.get(':nth-child(4) > .nav-link')
+      .should('contain.text', user.username)
   });
 });
-
-//'test.user.qa.123@gmail.com'
